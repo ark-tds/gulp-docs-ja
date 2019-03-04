@@ -78,7 +78,6 @@ exports.default = observableTask;
 
 ### エラーファーストコールバックの使用
 
-If nothing is returned from your task, you must use the error-first callback to signal completion. The callback will be passed to your task as the only argument - named `cb()` in the examples below.
 タスクから何も返されない場合、完了を通知するためにエラーファーストコールバックを使用しなければなりません。コールバックは唯一の引数としてタスクに渡されます。次の例では `cb()` という名前です。
 
 ```js
@@ -117,13 +116,10 @@ exports.default = passingCallback;
 
 同期的なタスクはもはやサポートされていません。それらはしばしば、タスクからストリームを返し忘れるようなデバッグが困難なとらえがたいミスにつながりました。
 
-You'll need to use the error-first callback or return a stream, promise, event emitter, child process, or observable to resolve the issue.
-
 _"Did you forget to signal async completion?"_ （非同期完了の通知を忘れましたか？）という警告を見たとき、上記のテクニックのいずれも使用されていません。この問題を解決するためには、エラーファーストコールバックを使用するか、ストリームやプロミス、イベントエミッター、子プロセス、observable を返す必要があります。
 
 ## async/await の使用
 
-When not using any of the previous options, you can define your task as an , which wraps your task in a promise. This allows you to work with promises synchronously using `await` and use other synchronous code.
 前述のオプションをどれも使用しない場合、タスクを [`async` 関数][async-await-docs] として定義することができます。これはプロミスの中にタスクをラップします。これにより、`await` と他の同期的なコードを用いてプロミスを同期的に処理することができます。
 
 ```js
