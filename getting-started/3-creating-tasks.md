@@ -44,11 +44,11 @@ exports.default = series(clean, build);
 
 <small>以前、`task()` は関数をタスクとして登録するために使用されていました。この API はいまだ利用可能ですが、エクスポートが機能しないエッジケースを除いて、エクスポートは主要な登録メカニズムであるべきです。</small>
 
-## Compose tasks
+## タスクを合成する
 
-Gulp provides two powerful composition methods, `series()` and `parallel()`, allowing individual tasks to be composed into larger operations. Both methods accept any number of task functions or composed operations.  `series()` and `parallel()` can be nested within themselves or each other to any depth.
+gulp は2つの強力な合成メソッドである `series()` と `parallel()` を提供し、個々のタスクをより大きな操作にまとめることができます。両方のメソッドともタスク関数や合成操作をいくつでも受け入れます。`series()` と `parallel()` はそれら自身や互いにどんな深さでも入れ子にすることができます。
 
-To have your tasks execute in order, use the `series()` method.
+タスクを順番に実行するためには、`series()` メソッドを使用してください。
 ```js
 const { series } = require('gulp');
 
@@ -65,7 +65,7 @@ function bundle(cb) {
 exports.build = series(transpile, bundle);
 ```
 
-For tasks to run at maximum concurrency, combine them with the `parallel()` method.
+タスクを最大限並行実行するために、それらを `parallel()` メソッドと組み合わせてください。
 ```js
 const { parallel } = require('gulp');
 
@@ -82,7 +82,7 @@ function css(cb) {
 exports.build = parallel(javascript, css);
 ```
 
-Tasks are composed immediately when either `series()` or `parallel()` is called.  This allows variation in the composition instead of conditional behavior inside individual tasks.
+`series()` または `parallel()` のどちらかが呼ばれるとタスクはすぐに合成されます。これにより、個々のタスク内の条件的な振る舞いによらず、多様な合成を行うことができます。
 
 ```js
 const { series } = require('gulp');
@@ -110,7 +110,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 ```
 
-`series()` and `parallel()` can be nested to any arbitrary depth.
+`series()` と `parallel()` はどんな深さにでもネストすることができます。
 
 ```js
 const { series, parallel } = require('gulp');
@@ -161,9 +161,10 @@ exports.build = series(
 );
 ```
 
-When a composed operation is run, each task will be executed every time it was referenced.  For example, a `clean` task referenced before two different tasks would be run twice and lead to undesired results.  Instead, refactor the `clean` task to be specified in the final composition.
+合成操作が実行されるとき、各タスクは参照されるごとに実行されます。例えば、2つの異なるタスクの前に参照された `clean` タスクは2回実行され、望まぬ結果になります。代わりに、`clean` タスクを最後のコンポジションで指定するようにリファクタリングしてください。
 
-If you have code like this:
+
+このようなコードだったら、
 
 ```js
 // This is INCORRECT
@@ -187,7 +188,7 @@ const javascript = series(clean, function(cb) {
 exports.build = parallel(css, javascript);
 ```
 
-Migrate to this:
+これに移行します。
 
 ```js
 const { series, parallel } = require('gulp');
