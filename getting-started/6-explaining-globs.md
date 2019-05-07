@@ -51,13 +51,13 @@ const invalidGlob = path.join(__dirname, 'src/*.js');
 
 glob は配列順に一致するので、配列内でネガティブ glob は少なくとも1つの非ネガティブ glob の後に続かなければなりません。まず非ネガティブ glob に一致するものを見つけ、そしてネガティブ glob はそれらの結果の一部を削除します。これらはリテラル文字だけを含むとき最もパフォーマンスがいいです。
 ```js
-['script/**/*.js', '!scripts/vendor/']
+['scripts/**/*.js', '!scripts/vendor/']
 ```
 
 任意の非ネガティブ glob がネガティブ glob に続いた場合、非ネガティブ glob に一致するものは削除されません。
 
 ```js
-['script/**/*.js', '!scripts/vendor/', 'scripts/vendor/react.js']
+['scripts/**/*.js', '!scripts/vendor/', 'scripts/vendor/react.js']
 ```
 
 ダブルスター glob を制限するための代用としてネガティブ glob を使用することができます。
