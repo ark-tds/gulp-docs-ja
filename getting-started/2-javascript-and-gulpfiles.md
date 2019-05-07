@@ -20,6 +20,8 @@ TypeScript や Babel のようなトランスパイルを必要とする言語�
 * TypeScript の場合、`gulpfile.ts` へ名前を変更し、[ts-node][ts-node-module] モジュールをインストールします。
 * Babel の場合、`gulpfile.babel.js` へ名前を変更し、[@babel/register][babel-register-module] モジュールをインストールします。
 
+__node のほとんどの新しいバージョンは、`import`/`export` シンタックスを除いて、TypeScript や Babel が提供しているほとんどの機能をサポートしています。このシンタックスを必要としているときだけ、`gulpfile.esm.js` に名前を変更して [esm][esm-module] モジュールをインストールしてください。__
+
 このトピックとサポートされた拡張子の一覧についての詳細は、[gulpfile トランスパイル][gulpfile-transpilation-advanced] のドキュメントを参照してください。
 
 ## gulpfile の分割
@@ -33,3 +35,4 @@ Node のモジュール解決により、`gulpfile.js` ファイルを、`gulpfi
 [gulpfile-transpilation-advanced]: ../documentation-missing.md
 [ts-node-module]: https://www.npmjs.com/package/ts-node
 [babel-register-module]: https://www.npmjs.com/package/@babel/register
+[esm-module]: https://www.npmjs.com/package/esm
