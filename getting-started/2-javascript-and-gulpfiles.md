@@ -28,7 +28,7 @@ TypeScript や Babel のようなトランスパイルを必要とする言語�
 
 各タスクを自身のファイルに分割でき、それらを組み合わせるために gulpfile へインポートできます。これによって、タスクを整理できるだけでなく、各タスクを個別にテストしたり、条件にもとづいて構成を変更したりできます。
 
-Node のモジュール解決により、`gulpfile.js` ファイルを、`gulpfile.js` として扱われる `index.js` ファイルを含む `gulpfile.js` という名前のディレクトリに置き換えることができます。このディレクトリはタスク用の個々のモジュールを含めることができます。
+Node のモジュール解決により、`gulpfile.js` ファイルを、`gulpfile.js` として扱われる `index.js` ファイルを含む `gulpfile.js` という名前のディレクトリに置き換えることができます。このディレクトリはタスク用の個々のモジュールを含めることができます。トランスパイラを使用している場合、このディレクトリとファイルを適宜命名してください。
 
 [gulpfile-transpilation-advanced]: ../documentation-missing.md
 [ts-node-module]: https://www.npmjs.com/package/ts-node
