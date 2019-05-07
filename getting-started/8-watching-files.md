@@ -29,10 +29,12 @@ function css(cb) {
   cb();
 }
 
-// You can use a single task
-watch('src/*.css', css);
-// Or a composed task
-watch('src/*.js', series(clean, javascript));
+exports.default = function() {
+  // You can use a single task
+  watch('src/*.css', css);
+  // Or a composed task
+  watch('src/*.js', series(clean, javascript));
+};
 ```
 
 ## 警告：同期を避けてください
@@ -49,11 +51,13 @@ watch('src/*.js', series(clean, javascript));
 ```js
 const { watch } = require('gulp');
 
-// All events will be watched
-watch('src/*.js', { events: 'all' }, function(cb) {
-  // body omitted
-  cb();
-});
+exports.default = function() {
+  // All events will be watched
+  watch('src/*.js', { events: 'all' }, function(cb) {
+    // body omitted
+    cb();
+  });
+};
 ```
 
 ## 初期実行
@@ -65,11 +69,13 @@ watch('src/*.js', { events: 'all' }, function(cb) {
 ```js
 const { watch } = require('gulp');
 
-// The task will be executed upon startup
-watch('src/*.js', { ignoreInitial: false }, function(cb) {
-  // body omitted
-  cb();
-});
+exports.default = function() {
+  // The task will be executed upon startup
+  watch('src/*.js', { ignoreInitial: false }, function(cb) {
+    // body omitted
+    cb();
+  });
+};
 ```
 
 ## キュー
@@ -81,11 +87,13 @@ watch('src/*.js', { ignoreInitial: false }, function(cb) {
 ```js
 const { watch } = require('gulp');
 
-// The task will be run (concurrently) for every change made
-watch('src/*.js', { queue: false }, function(cb) {
-  // body omitted
-  cb();
-});
+exports.default = function() {
+  // The task will be run (concurrently) for every change made
+  watch('src/*.js', { queue: false }, function(cb) {
+    // body omitted
+    cb();
+  });
+};
 ```
 
 ## 遅延
@@ -97,11 +105,13 @@ watch('src/*.js', { queue: false }, function(cb) {
 ```js
 const { watch } = require('gulp');
 
-// The task won't be run until 500ms have elapsed since the first change
-watch('src/*.js', { delay: 500 }, function(cb) {
-  // body omitted
-  cb();
-});
+exports.default = function() {
+  // The task won't be run until 500ms have elapsed since the first change
+  watch('src/*.js', { delay: 500 }, function(cb) {
+    // body omitted
+    cb();
+  });
+};
 ```
 
 ## 監視インスタンスの使用
