@@ -7,7 +7,6 @@ sidebar_label: Creating Tasks
 
 # タスクの作成
 
-Due to some platform limitations, synchronous tasks aren't supported, though there is a pretty nifty [alternative].
 各 gulp タスクは非同期的な JavaScript の関数で、エラーファーストコールバックを受け取り、ストリームやプロミンス、イベントエミッター、子プロセス、observable を返します（[詳細は後述][async-completion-docs]）。いくつかのプラットフォームの制限のため、同期的なタスクはサポートされていませんが、とてもすばらしい[代替][using-async-await-docs]があります。
 
 ## エクスポート
