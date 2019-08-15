@@ -1,4 +1,4 @@
-# Rollup with rollup-stream
+# rollup-stream を用いた Rollup
 
 Browserify と同様に、[Rollup](https://rollupjs.org/) はバンドラーであるため、パイプラインの先頭にある場合にのみ gulp に自然に適合します。Browserify と異なり、Roollup はストリームを出力としてネイティブに生成しないので、この位置を取る前にラップする必要があります。[rollup-stream](https://github.com/Permutatrix/rollup-stream) はこれを行い、Browserify の `bundle()` メソッドのような出力を生成します。その結果、Browserify レシピのほとんどは rollup-stream でも動作します。
 
