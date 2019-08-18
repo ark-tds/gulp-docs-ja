@@ -83,7 +83,7 @@ src(globs, [options])
 | nodir | boolean | false | true の場合、ディレクトリではなくファイルのみを照合します。<br>**注意：** ディレクトリのみを照合させるには、glob を `/` で終わらせます。<br>_このオプションは [node-glob][node-glob-external] へ直接渡されます。_ |
 | ignore | string<br>array | | マッチングから除外する glob。このオプションは否定 `globs` と組み合わされます。<br>**注意：:** これらの glob は、他の設定に関係なく、常にドットファイルを照合します。<br>_このオプションは [node-glob][node-glob-external] へ直接渡されます。_ |
 | follow | boolean | false | true の場合、`**` glob を展開するとき、シンボリックリンクされたディレクトリを横断します。<br>**注意：** これは循環リンクで問題を起こす可能性があります。<br>_このオプションは [node-glob][node-glob-external] へ直接渡されます。_ |
-| realpath | boolean | false | true の場合、`fs.realpath()` はすべての結果で呼び出されます。これにより、リンクがぶら下がる場合があります。<br>_このオプションは [node-glob][node-glob-external] へ直接渡されます。_ |
+| realpath | boolean | false | true の場合、`fs.realpath()` はすべての結果で呼び出されます。これにより、リンクがダングリングする場合があります。<br>_このオプションは [node-glob][node-glob-external] へ直接渡されます。_ |
 | cache | object | | 以前作成されたキャッシュオブジェクト。いくつかのファイルシステム呼び出しを回避します。<br>_このオプションは [node-glob][node-glob-external] へ直接渡されます。_ |
 | statCache | object | | 以前作成された `fs.Stat` の結果のキャッシュ。いくつかのファイルシステム呼び出しを回避します。<br>_このオプションは [node-glob][node-glob-external] へ直接渡されます。_ |
 | symlinks | object | | 以前作成されたシンボリックリンクのキャッシュ。いくつかのファイルシステム呼び出しを回避します。<br>_このオプションは [node-glob][node-glob-external] へ直接渡されます。_ |
