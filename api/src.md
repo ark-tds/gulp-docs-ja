@@ -68,7 +68,7 @@ src(globs, [options])
 | allowEmpty | boolean | false | false の場合、1つのファイル（`foo/bar.js` など）にしか照合できない `globs` が一致するものを見つけられなかった場合、エラーを投げます。true の場合、glob エラーを抑制します。<br>_このオプションは [glob-stream][glob-stream-external] へ直接渡されます。_ |
 | uniqueBy | string<br>function | `'path'` | 文字列のプロパティ名または関数の結果を比較して、ストリームから重複を削除します。<br>**注意：** 関数を使用する場合、関数はストリームデータ（`cwd`、`base`、`path` プロパティを含むオブジェクト）を受け取ります。 |
 | dot | boolean | false | true の場合、`.gitignore` のようなドットファイルに対する globs を比較します。<br>_このオプションは [node-glob][node-glob-external] へ直接渡されます。_ |
-| silent | boolean | true | true の場合、`stderr` に警告が出力されないようにします。<br>**注意：** このオプションは [node-glob][node-glob-external] へ直接渡されますが、`false` ではなく `true` が初期値になります。 |
+| silent | boolean | true | true の場合、`stderr` に警告が出力されないようにします。<br>**注意：** このオプションは [node-glob][node-glob-external] へ直接渡されますが、`false` ではなく `true` に初期化されます。 |
 | mark | boolean | false | true の場合、ディレクトリマッチングのために `/` 文字が追加されます。パスはパイプライン内で正規化されるため、通常は必要ありません。<br>_このオプションは [node-glob][node-glob-external] へ直接渡されます。_ |
 | nosort | boolean | false | true の場合、glob 結果の並び替えを無効にします。<br>_このオプションは [node-glob][node-glob-external] へ直接渡されます。_ |
 | stat | boolean | false | true の場合、`fs.stat()` はすべての結果で呼び出されます。これにより余分なオーバーヘッドが追加されるため、通常は使用すべきではありません。<br>_このオプションは [node-glob][node-glob-external] へ直接渡されます。_ |
