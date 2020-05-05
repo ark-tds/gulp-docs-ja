@@ -126,7 +126,7 @@ _"Did you forget to signal async completion?"_ （非同期完了の通知を忘
 const fs = require('fs');
 
 async function asyncAwaitTask() {
-  const { version } = fs.readFileSync('package.json');
+  const { version } = JSON.parse(fs.readFileSync('package.json', 'utf8'));
   console.log(version);
   await Promise.resolve('some result');
 }
