@@ -3,7 +3,7 @@
 [Browserify](https://github.com/browserify/browserify) は重要かつ不可欠なツールになりましたが、
 gulp でうまく動作させる前にラップする必要があります。以下は、transform とともに Browserify を使用するためのシンプルなレシピです。
 
-ストリーム内で Browserify または ugilify を用いてエラーをハンドリングするためのレシピ [ストリームをハンドルエラーへ組み合わせる](https://github.com/gulpjs/gulp/blob/master/docs/recipes/combining-streams-to-handle-errors.md) も参照してください。
+ストリーム内で Browserify または ugilify を用いてエラーをハンドリングするためのレシピ [ストリームをハンドルエラーへ組み合わせる](https://github.com/gulpjs/gulp/blob/master/docs/recipes/combining-streams-to-handle-errors.md)も参照してください。
 
 ``` javascript
 'use strict';

@@ -3,7 +3,7 @@
 [Browserify + Uglify2](https://github.com/gulpjs/gulp/blob/master/docs/recipes/browserify-uglify-sourcemap.md) は JavaScript ファイルとその依存関係をバンドルし、ソースマップを保持しながら UglifyJS でそのバンドルを軽量化するための基本的な gulp タスクの設定方法を示しています。
 しかしながら、複数のエントリーポイントをもつ gulp と Browserify を使用する方法は示していません。
 
-ストリーム内で Browserify または ugilify を用いてエラーをハンドリングするためのレシピ [ストリームをハンドルエラーへ組み合わせる](https://github.com/gulpjs/gulp/blob/master/docs/recipes/combining-streams-to-handle-errors.md) も参照してください。
+ストリーム内で Browserify または ugilify を用いてエラーをハンドリングするためのレシピ [ストリームをハンドルエラーへ組み合わせる](https://github.com/gulpjs/gulp/blob/master/docs/recipes/combining-streams-to-handle-errors.md)も参照してください。
 
 ``` javascript
 'use strict';

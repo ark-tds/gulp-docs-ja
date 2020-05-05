@@ -39,7 +39,7 @@ gulp.task('copy', function (done) {
 
 ### 代替手法に関するいくつかの文句
 
-*gulp フレンドリーな*ノードモジュール `gulp-grunt` [利用可能](https://www.npmjs.org/package/gulp-grunt) があり、これは異なるアプローチを取ります。これは子プロセスを作成し、それらの中で grunt タスクが実行されます。これを動作させるにはいくつかの制限があります。
+*gulp フレンドリーな*ノードモジュール `gulp-grunt` [利用可能](https://www.npmjs.org/package/gulp-grunt)があり、これは異なるアプローチを取ります。これは子プロセスを作成し、それらの中で grunt タスクが実行されます。これを動作させるにはいくつかの制限があります。
 
 * 現時点では、`gulp-grunt` を介してオプション / cli の引数などを grunt タスクに渡すことができません。
 * すべての grunt タスクは個別の Gruntfile 内で定義されなければなりません。

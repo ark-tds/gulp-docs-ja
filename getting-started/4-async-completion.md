@@ -6,7 +6,7 @@ sidebar_label: Async Completion
 -->
 
 # 非同期完了
-Node のライブラリは様々な方法で非同期に処理を行います。最も一般的なパターンは [エラーファーストコールバック][node-api-error-first-callbacks] ですが、[ストリーム][stream-docs] や [プロミス][promise-docs]、[イベントエミッター][event-emitter-docs]、[子プロセス][child-process-docs]、[observables][observable-docs] にも遭遇するかもしれません。gulp タスクは、これらすべての非同期性の種類を正規化します。
+Node のライブラリは様々な方法で非同期に処理を行います。最も一般的なパターンは[エラーファーストコールバック][node-api-error-first-callbacks]ですが、[ストリーム][stream-docs]や[プロミス][promise-docs]、[イベントエミッター][event-emitter-docs]、[子プロセス][child-process-docs]、[observables][observable-docs] にも遭遇するかもしれません。gulp タスクは、これらすべての非同期性の種類を正規化します。
 
 ## タスクの完了を通知する
 
@@ -120,7 +120,7 @@ _"Did you forget to signal async completion?"_ （非同期完了の通知を忘
 
 ## async/await の使用
 
-前述のオプションをどれも使用しない場合、タスクを [`async` 関数][async-await-docs] として定義することができます。これはプロミスの中にタスクをラップします。これにより、`await` と他の同期的なコードを用いてプロミスを同期的に処理することができます。
+前述のオプションをどれも使用しない場合、タスクを [`async` 関数][async-await-docs]として定義することができます。これはプロミスの中にタスクをラップします。これにより、`await` と他の同期的なコードを用いてプロミスを同期的に処理することができます。
 
 ```js
 const fs = require('fs');

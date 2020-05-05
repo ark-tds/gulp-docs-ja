@@ -22,7 +22,7 @@ TypeScript や Babel のようなトランスパイルを必要とする言語�
 
 __node のほとんどの新しいバージョンは、`import`/`export` シンタックスを除いて、TypeScript や Babel が提供しているほとんどの機能をサポートしています。このシンタックスを必要としているときだけ、`gulpfile.esm.js` に名前を変更して [esm][esm-module] モジュールをインストールしてください。__
 
-このトピックとサポートされた拡張子の一覧についての詳細は、[gulpfile トランスパイル][gulpfile-transpilation-advanced] のドキュメントを参照してください。
+このトピックとサポートされた拡張子の一覧についての詳細は、[gulpfile トランスパイル][gulpfile-transpilation-advanced]のドキュメントを参照してください。
 
 ## gulpfile の分割
 

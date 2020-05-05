@@ -4,7 +4,7 @@
 gulp でうまく動作させる前にラップする必要があります。以下は、オリジナルの個々のファイルへ解決する完全なソースマップをもつ
 [Browserify](https://github.com/browserify/browserify) を使用するためのシンプルなレシピです。
 
-ストリーム内で Browserify または ugilify を用いてエラーをハンドリングするためのレシピ [ストリームをハンドルエラーへ組み合わせる](https://github.com/gulpjs/gulp/blob/master/docs/recipes/combining-streams-to-handle-errors.md) も参照してください。
+ストリーム内で Browserify または ugilify を用いてエラーをハンドリングするためのレシピ [ストリームをハンドルエラーへ組み合わせる](https://github.com/gulpjs/gulp/blob/master/docs/recipes/combining-streams-to-handle-errors.md)も参照してください。
 
 ソースマップをもつ Browserify + Uglify2 のためのシンプルな `gulpfile.js` ファイル：
 

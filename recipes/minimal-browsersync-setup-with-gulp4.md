@@ -34,7 +34,7 @@ gulpfile は3つの部分に分けられます。
 
 ### 1. 通常どおり dist パッケージを準備するタスクを書きます
 
-詳細はメインの[README](https://github.com/gulpjs/gulp/blob/4.0/README.md#use-last-javascript-version-in-your-gulpfile)を参照してください。
+詳細はメインの [README](https://github.com/gulpjs/gulp/blob/4.0/README.md#use-last-javascript-version-in-your-gulpfile) を参照してください。
 
 ```javascript
 import babel from 'gulp-babel';

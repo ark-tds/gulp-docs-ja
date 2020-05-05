@@ -11,7 +11,7 @@ sidebar_label: Working with Files
 
 `src()` はファイルシステムから読み込むための [glob][explaining-globs-docs] が与えられ、[Node stream][node-streams-docs] を生成します。一致するすべてのファイルを見つけ出し、ストリームを通過するためにそれらをメモリに読み込みます。
 
-[タスクの生成][creating-tasks-docs] で述べたように、`src()` によって生成されたストリームは非同期完了を通知するために、タスクから返されるべきです。
+[タスクの生成][creating-tasks-docs]で述べたように、`src()` によって生成されたストリームは非同期完了を通知するために、タスクから返されるべきです。
 
 ```js
 const { src, dest } = require('gulp');
