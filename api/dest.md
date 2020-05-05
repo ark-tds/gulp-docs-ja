@@ -32,7 +32,7 @@ dest(directory, [options])
 
 | パラメーター | 型 | 備考 |
 |:--------------:|:-----:|--------|
-| directory<br>**(required)** | string<br>function | ファイルが書き出されるディレクトリのパス。関数が使用される場合、関数は各 Vinyl オブジェクトとともに呼び出され、文字列のディレクトリパスを返さなければなりません。 |
+| directory<br />**(required)** | string<br />function | ファイルが書き出されるディレクトリのパス。関数が使用される場合、関数は各 Vinyl オブジェクトとともに呼び出され、文字列のディレクトリパスを返さなければなりません。 |
 | options | object | 詳細は以下の[オプション][options-section]にあります。 |
 
 ### 返り値
@@ -59,14 +59,14 @@ dest(directory, [options])
 
 | 名前 | 型 | 初期値 | 備考 |
 |:-------:|:------:|-----------|-------|
-| cwd | string<br>function | `process.cwd()` | 絶対パスを形成するために相対パスと結合されるディレクトリ。絶対パスでは無視されます。`directory` と `path.join()` の組み合わせを避けるために使用してください。 |
-| mode | number<br>function | Vinyl オブジェクトの `stat.mode` | ファイルの作成時に使用されるモード。設定されておらず、`stat.mode` が見つからない場合、代わりにプロセスのモードが使用されます。 |
-| dirMode | number<br>function | | ディレクトリの作成時に使用されるモード。設定されていない場合、代わりにプロセスのモードが使用されます。 |
-| overwrite | boolean<br>function | true | true の場合、同じパスにある既存のファイルを上書きします。 |
-| append | boolean<br>function | false | true の場合、既存の内容を置換する代わりに、ファイルの最後に内容を追加します。 |
-| sourcemaps | boolean<br>string<br>function | false | true の場合、出力ファイルへインラインソースマップを書き出します。`string` パスを指定すると、与えられたパスへ外部ソースマップが書き出されます。 |
-| relativeSymlinks | boolean<br>function | false | false の場合、作成されたシンボリックリンクは絶対になります。<br>**注意：** ジャンクションが作成されている場合、それらは絶対でなければならないので、無視されます。 |
-| useJunctions | boolean<br>function | true | このオプションは Windows でのみ関連し、他では無視されます。true の場合、ディレクトリシンボリックリンクをジャンクションとして作成します。詳細は以下の [Windows 上のシンボリックリンク][symbolic-links-section]にあります。 |
+| cwd | string<br />function | `process.cwd()` | 絶対パスを形成するために相対パスと結合されるディレクトリ。絶対パスでは無視されます。`directory` と `path.join()` の組み合わせを避けるために使用してください。 |
+| mode | number<br />function | Vinyl オブジェクトの `stat.mode` | ファイルの作成時に使用されるモード。設定されておらず、`stat.mode` が見つからない場合、代わりにプロセスのモードが使用されます。 |
+| dirMode | number<br />function | | ディレクトリの作成時に使用されるモード。設定されていない場合、代わりにプロセスのモードが使用されます。 |
+| overwrite | boolean<br />function | true | true の場合、同じパスにある既存のファイルを上書きします。 |
+| append | boolean<br />function | false | true の場合、既存の内容を置換する代わりに、ファイルの最後に内容を追加します。 |
+| sourcemaps | boolean<br />string<br />function | false | true の場合、出力ファイルへインラインソースマップを書き出します。`string` パスを指定すると、与えられたパスへ外部ソースマップが書き出されます。 |
+| relativeSymlinks | boolean<br />function | false | false の場合、作成されたシンボリックリンクは絶対になります。<br />**注意：** ジャンクションが作成されている場合、それらは絶対でなければならないので、無視されます。 |
+| useJunctions | boolean<br />function | true | このオプションは Windows でのみ関連し、他では無視されます。true の場合、ディレクトリシンボリックリンクをジャンクションとして作成します。詳細は以下の [Windows 上のシンボリックリンク][symbolic-links-section]にあります。 |
 
 ## メタデータの更新
 

@@ -62,7 +62,7 @@ task([taskName], taskFunction)
 | パラメーター | 型 | 備考 |
 |:--------------:|:------:|-------|
 | taskName | string | タスクシステム内のタスク関数のエイリアス。`taskFunction` に名前付き関数を使用する場合は不要です。 |
-| taskFunction<br>**（必須）** | function | [タスク関数][task-concepts]または `series()` と `parallel()` によって生成される合成タスク。理想的には名前付き関数。[タスクメタデータ][task-metadata-section]を割り当て、コマンドラインへ追加の情報を提供できます。 |
+| taskFunction<br />**（必須）** | function | [タスク関数][task-concepts]または `series()` と `parallel()` によって生成される合成タスク。理想的には名前付き関数。[タスクメタデータ][task-metadata-section]を割り当て、コマンドラインへ追加の情報を提供できます。 |
 
 ### 返り値
 
@@ -78,7 +78,7 @@ task([taskName], taskFunction)
 
 | プロパティ | 型 | 備考 |
 |:--------------:|:------:|-------|
-| name | string | 名前付き関数の特別なプロパティ。タスクの登録に使用します。<br>**注意：** [`name`][function-name-external] は書き込み可能です。設定まはた変更できません。 |
+| name | string | 名前付き関数の特別なプロパティ。タスクの登録に使用します。<br />**注意：** [`name`][function-name-external] は書き込み可能です。設定まはた変更できません。 |
 | displayName | string | `taskFunction` へ割り当てる場合、タスクのエイリアスを作成します。関数名に許可されていない文字を使用する場合、このプロパティを使用してください。 |
 | description | string | `taskFunction` へ割り当てる場合、タスクを一覧表示するときコマンドラインによって出力される説明を提供します。 |
 | flags | object | `taskFunction` へ割り当てる場合、タスクを一覧表示するときコマンドラインによって出力されるフラグを提供します。オブジェクトのキーはフラグを表し、値はその説明を表します。 |

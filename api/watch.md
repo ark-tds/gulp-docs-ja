@@ -30,9 +30,9 @@ watch(globs, [options], [task])
 
 | パラメーター | 型 | 備考 |
 |:--------------:|:-----:|--------|
-| globs<br>**（必須）** | string<br>array | ファイルシステム上で監視するための [glob][globs-concepts]。 |
+| globs<br />**（必須）** | string<br />array | ファイルシステム上で監視するための [glob][globs-concepts]。 |
 | options | object | 詳細は以下の[オプション][options-section]にあります。 |
-| task | function<br>string | [タスク関数][tasks-concepts]または `series()` と `parallel()` によって生成された合成タスク |
+| task | function<br />string | [タスク関数][tasks-concepts]または `series()` と `parallel()` によって生成された合成タスク |
 
 ### 返り値
 
@@ -48,24 +48,24 @@ watch(globs, [options], [task])
 
 | 名前 | 型 | 初期値 | 備考 |
 |:-------:|:------:|-----------|--------|
-| ignoreInitial | boolean | true | false の場合、ファイルパスが検出されると、インスタンス化中にタスクが呼び出されます。起動中にタスクとトリガーするために使用します。<br>**注意：** このオプションは [chokidar][chokidar-external] に渡されますが、`false` ではなく `true` に初期化されます。 |
+| ignoreInitial | boolean | true | false の場合、ファイルパスが検出されると、インスタンス化中にタスクが呼び出されます。起動中にタスクとトリガーするために使用します。<br />**注意：** このオプションは [chokidar][chokidar-external] に渡されますが、`false` ではなく `true` に初期化されます。 |
 | delay | number | 200 | ファイルの変更からタスクの実行までのミリ秒の遅延。タスクを実行する前に多くの変更、例えば多くのファイルの検索と置換を待つことができます。 |
 | queue | boolean | true | true かつタスクがすでに実行されている場合、ファイルの変更は単一のタスク実行をキューに入れます。長時間実行されるタスクが重複しないようにします。 |
-| events | string<br>array | [ 'add',<br>'change',<br>'unlink' ] | タスク実行をトリガーするために監視されるイベント。`'add'`、`'addDir'`、`'change'`、`'unlink'`、`'unlinkDir'`、`'ready'`、かつ/または `'error'` を指定できます。さらに、`'ready'` と `'error'` 以外のすべてのイベントを表す `'all'` が利用可能です。<br>_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
-| persistent | boolean | true | false の場合、ウォッチャーは Node プロセスの実行を維持しません。このオプションの無効化は推奨しません。<br>_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
-| ignored | array<br>string<br>RegExp<br>function |  | 無視する glob を定義します。関数が提供される場合、パスごとに2回呼び出されます。1回はパスとともに、もう1回はパスとファイルの `fs.Stats` オブジェクトとともに呼び出されます。<br>_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
-| followSymlinks | boolean | true | true の場合、シンボリックリンクとリンクされたファイルの両方の変更がイベントをトリガーします。<br>_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
-| cwd | string |  | 絶対パスを形成するために相対パスと結合されるディレクトリ。絶対パスでは無視されます。`globs` と `path.join()` の組み合わせを避けるために使用してください。<br>_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
-| disableGlobbing | boolean | false | true の場合、すべての `globs` は、特殊文字が含まれていたとしても、リテラルパス名として扱われます。<br>_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
-| usePolling | boolean | false | false の場合、ウォッチャーは監視のために `fs.watch()` （または Mac では [fsevents][fsevents-external]）を使用します。true の場合、代わりに `fs.watchFile()` ポーリングを使用します。これは、ネットワークまたは他の非標準的な状況でファイルを正常に監視するために必要です。`useFsEvents` の初期値を上書きします。<br>_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
-| interval | number | 100 | `usePolling: true` と組み合わせます。ファイルシステムポーリングの間隔。<br>_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
-| binaryInterval | number | 300 | `usePolling: true` と組み合わせます。バイナリファイルのためのファイルシステムポーリングの間隔。<br>_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
-| useFsEvents | boolean | true | true の場合、利用可能ならば監視するために fsevents を使用します。明示的に true に指定された場合、`usePolling` オプションに取って代わります。false に指定された場合、`usePolling` が自動的に true に設定されます<br>_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
-| alwaysStat | boolean | false | true の場合、変更されたファイルに関して `fs.stat()` が常に呼び出されますが、ファイル監視が遅くなります。`fs.Stat` オブジェクトは、chokidar インスタンスを直接使用している場合にのみ利用可能です。<br>_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
-| depth | number |  | 監視されるディレクトリのネストされたレベルの数を示します。<br>_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
-| awaitWriteFinish | boolean | false | このオプションを使用せず、代わりに `delay` を使用してください。<br>_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
-| ignorePermissionErrors | boolean | false | 読み取り権限のないファイルを監視するために true に設定してください。その後、EPERM または EACCES エラーが原因で監視が失敗した場合、それらは静かにスキップされます。<br>_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
-| atomic | number | 100 | `useFsEvents` と `usePolling` が false の場合にだけ有効です。一部のエディターによる "atomic writes" から発生する生成物を自動的に除外します。削除されてから指定されたミリ秒以内にファイルが再追加された場合、unlink イベントと add イベントの代わりに、変更イベントが発火されます。<br>_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
+| events | string<br />array | [ 'add',<br />'change',<br />'unlink' ] | タスク実行をトリガーするために監視されるイベント。`'add'`、`'addDir'`、`'change'`、`'unlink'`、`'unlinkDir'`、`'ready'`、かつ/または `'error'` を指定できます。さらに、`'ready'` と `'error'` 以外のすべてのイベントを表す `'all'` が利用可能です。<br />_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
+| persistent | boolean | true | false の場合、ウォッチャーは Node プロセスの実行を維持しません。このオプションの無効化は推奨しません。<br />_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
+| ignored | array<br />string<br />RegExp<br />function |  | 無視する glob を定義します。関数が提供される場合、パスごとに2回呼び出されます。1回はパスとともに、もう1回はパスとファイルの `fs.Stats` オブジェクトとともに呼び出されます。<br />_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
+| followSymlinks | boolean | true | true の場合、シンボリックリンクとリンクされたファイルの両方の変更がイベントをトリガーします。<br />_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
+| cwd | string |  | 絶対パスを形成するために相対パスと結合されるディレクトリ。絶対パスでは無視されます。`globs` と `path.join()` の組み合わせを避けるために使用してください。<br />_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
+| disableGlobbing | boolean | false | true の場合、すべての `globs` は、特殊文字が含まれていたとしても、リテラルパス名として扱われます。<br />_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
+| usePolling | boolean | false | false の場合、ウォッチャーは監視のために `fs.watch()` （または Mac では [fsevents][fsevents-external]）を使用します。true の場合、代わりに `fs.watchFile()` ポーリングを使用します。これは、ネットワークまたは他の非標準的な状況でファイルを正常に監視するために必要です。`useFsEvents` の初期値を上書きします。<br />_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
+| interval | number | 100 | `usePolling: true` と組み合わせます。ファイルシステムポーリングの間隔。<br />_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
+| binaryInterval | number | 300 | `usePolling: true` と組み合わせます。バイナリファイルのためのファイルシステムポーリングの間隔。<br />_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
+| useFsEvents | boolean | true | true の場合、利用可能ならば監視するために fsevents を使用します。明示的に true に指定された場合、`usePolling` オプションに取って代わります。false に指定された場合、`usePolling` が自動的に true に設定されます<br />_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
+| alwaysStat | boolean | false | true の場合、変更されたファイルに関して `fs.stat()` が常に呼び出されますが、ファイル監視が遅くなります。`fs.Stat` オブジェクトは、chokidar インスタンスを直接使用している場合にのみ利用可能です。<br />_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
+| depth | number |  | 監視されるディレクトリのネストされたレベルの数を示します。<br />_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
+| awaitWriteFinish | boolean | false | このオプションを使用せず、代わりに `delay` を使用してください。<br />_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
+| ignorePermissionErrors | boolean | false | 読み取り権限のないファイルを監視するために true に設定してください。その後、EPERM または EACCES エラーが原因で監視が失敗した場合、それらは静かにスキップされます。<br />_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
+| atomic | number | 100 | `useFsEvents` と `usePolling` が false の場合にだけ有効です。一部のエディターによる "atomic writes" から発生する生成物を自動的に除外します。削除されてから指定されたミリ秒以内にファイルが再追加された場合、unlink イベントと add イベントの代わりに、変更イベントが発火されます。<br />_このオプションは [chokidar][chokidar-external] へ直接渡されます。_ |
 
 ## Chokidar インスタンス
 
@@ -118,7 +118,7 @@ watcher.close();
 
 | パラメーター | 型 | 備考 |
 |:-------------:|:-----:|--------|
-| globs | string<br>array | 監視される追加の glob。 |
+| globs | string<br />array | 監視される追加の glob。 |
 
 `watcher.unwatch(globs)`
 
@@ -126,7 +126,7 @@ watcher.close();
 
 | パラメーター | 型 | 備考 |
 |:-------------:|:-----:|--------|
-| globs | string<br>array | 削除される glob。 |
+| globs | string<br />array | 削除される glob。 |
 
 [chokidar-instance-section]: #chokidar-instance
 [options-section]: #options

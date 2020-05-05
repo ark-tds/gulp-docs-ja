@@ -32,7 +32,7 @@ symlink(directory, [options])
 
 | パラメーター | 型 | 備考 |
 |:--------------:|:-----:|--------|
-| directory<br>**（必須）** | string<br>function | シンボリックリンクが作成される出力ディレクトリのパス。関数が使用される場合、その関数は各 Vinyl オブジェクトとともに呼び出され、文字列のディレクトリパスを返さなければならない。 |
+| directory<br />**（必須）** | string<br />function | シンボリックリンクが作成される出力ディレクトリのパス。関数が使用される場合、その関数は各 Vinyl オブジェクトとともに呼び出され、文字列のディレクトリパスを返さなければならない。 |
 | options | object | 詳細は以下の[オプション][options-section]にて説明します。 |
 
 ### 返り値
@@ -62,11 +62,11 @@ symlink(directory, [options])
 
 | 名前 | 型 | 初期値 | 備考 |
 |:-------:|:------:|-----------|-------|
-| cwd | string<br>function | `process.cwd()` | 絶対パスを形成するために相対パスと結合されるディレクトリ。絶対パスでは無視されます。`directory` と `path.join()` の組み合わせを避けるために使用してください。 |
-| dirMode | number<br>function | | ディレクトリの作成時に使用されるモード。設定されていない場合、代わりにプロセスのモードが使用されます。 |
-| overwrite | boolean<br>function | true | true の場合、同じパスにある既存のファイルを上書きします。 |
-| relativeSymlinks | boolean<br>function | false | false の場合、作成されたシンボリックリンクは絶対になります。**注意：** ジャンクションが作成されている場合、それらは絶対でなければならないので、無視されます。 |
-| useJunctions | boolean<br>function | true | このオプションは Windows でのみ関連し、他では無視されます。true の場合、ディレクトリシンボリックリンクをジャンクションとして作成します。詳細は以下の [Windows 上のシンボリックリンク][symbolic-links-section]にあります。 |
+| cwd | string<br />function | `process.cwd()` | 絶対パスを形成するために相対パスと結合されるディレクトリ。絶対パスでは無視されます。`directory` と `path.join()` の組み合わせを避けるために使用してください。 |
+| dirMode | number<br />function | | ディレクトリの作成時に使用されるモード。設定されていない場合、代わりにプロセスのモードが使用されます。 |
+| overwrite | boolean<br />function | true | true の場合、同じパスにある既存のファイルを上書きします。 |
+| relativeSymlinks | boolean<br />function | false | false の場合、作成されたシンボリックリンクは絶対になります。**注意：** ジャンクションが作成されている場合、それらは絶対でなければならないので、無視されます。 |
+| useJunctions | boolean<br />function | true | このオプションは Windows でのみ関連し、他では無視されます。true の場合、ディレクトリシンボリックリンクをジャンクションとして作成します。詳細は以下の [Windows 上のシンボリックリンク][symbolic-links-section]にあります。 |
 
 ## Windows 上のシンボリックリンク
 

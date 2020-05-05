@@ -39,7 +39,7 @@ lastRun(task, [precision])
 
 | パラメーター | 型 | 備考 |
 |:--------------:|:------:|-------|
-| task<br>**（必須）** | function<br>string | タスク関数または登録されたタスクの文字列エイリアス。 |
+| task<br />**（必須）** | function<br />string | タスク関数または登録されたタスクの文字列エイリアス。 |
 | precision | number | 初期値：Node v0.10 で `1000`、Node v0.12+ で `0`。詳細は以下の[タイムスタンプ精度][timestamp-precision-section]にあります。 |
 
 ### 返り値
