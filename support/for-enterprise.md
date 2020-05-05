@@ -5,7 +5,7 @@ hide_title: true
 sidebar_label: For Enterprise
 -->
 
-# Gulp for enterprise
+# エンタープライズ向けのGulp
 
 Tidelift サブスクリプションの一部として利用できます。
 
