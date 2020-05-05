@@ -23,7 +23,7 @@ $ npm install --save-dev gulp@next del
 ```
 
 gulpfile で、ビルドを実行する前に `mobile` フォルダの中身を削除します。
- 
+
 ```js
 var gulp = require('gulp');
 var del = require('del');
